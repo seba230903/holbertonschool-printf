@@ -29,7 +29,12 @@ int _printf(const char *format, ...)
 				_putchar_c(format[n + 1]);
 				contador++;
 			}
-			else
+			else if (format[n + 1] == 'c')
+			{
+			       _putchar_c(va_arg(list, int));
+			       contador++;
+			}
+			else if	(format[n + 1] == 's')
 			{
 				_putchar_s(va_arg(list, char *));
 			}
