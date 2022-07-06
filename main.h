@@ -5,5 +5,6 @@
 
 int _putchar_c(char c);
 int _putchar_s(char *s);
+int _printf(const char *format, ...);
 
 #endif
