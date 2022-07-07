@@ -18,9 +18,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			if (format[n + 1] != 'c' || format[n + 1] != 's')
+			if (format[n + 1] != 'c' && format[n + 1] != 's')
 			{
-				_putchar(format[n]);
+					_putchar(format[n]);
 				_putchar(format[n + 1]);
 				counter += 2;
 			}
@@ -58,7 +58,6 @@ int (*picker(char ch))(va_list)
 	op_p ops[] = {
 		{"c", _putchar_c},
 		{"s", _putchar_s},
-		{NULL, NULL}
 	};
 	int i = 0;
 
