@@ -101,6 +101,7 @@ int _putchar_d(va_list list)
 		{
 			_putchar('-');
 			d = d * -1;
+			counter++;
 		}
 		for (aux = 1; aux <= d; aux *= 10)
 			counter++;
@@ -109,6 +110,7 @@ int _putchar_d(va_list list)
 			_putchar(((d / aux) % 10) + 48);
 		}
 		_putchar((d % 10) + 48);
+		counter++;
 	}
 	else
 		_putchar('0');
