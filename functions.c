@@ -30,19 +30,19 @@ int _putchar_c(va_list list)
  * _putchar_s - writes a string
  * @s: string
  * Return: On success 1
- */
+  */
 int _putchar_s(va_list list)
 {
 	char *s;
-	int n = 0;
+	int m = 0;
 
 	s = va_arg(list, char *);
 	if (!s)
 		s = "(null)";
-	while (s[n])
+	while (s[m + 1])
 	{
-		_putchar(s[n]);
-		n++;
+		_putchar(s[m]);
+		m++;
 	}
-	return (n);
+	return (m);
 }
