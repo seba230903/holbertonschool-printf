@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			if (format[n + 1] != 'c' && format[n + 1] != 's' && format[n + 1] != 'd')
+			if (format[n + 1] != 'c' && format[n + 1] != 's'
+			&& format[n + 1] != 'd' && format [n + 1] != 'i')
 			{
 				_putchar(format[n]);
 				counter++;
