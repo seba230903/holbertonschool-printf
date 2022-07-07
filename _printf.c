@@ -43,6 +43,7 @@ int (*picker(char ch))(va_list)
 	op_p ops[] = {
 		{"c", _putchar_c},
 		{"s", _putchar_s},
+		{"%", _putchar_c}
 	};
 	int i = 0;
 
