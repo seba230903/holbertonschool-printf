@@ -2,6 +2,36 @@
 #include "main.h"
 
 /**
+ * picker - picks function to do
+ * @ch: is th character
+ * Description: recieves a character from function printf and
+ * from there it decides what function to do
+ *
+ * Return: return the function
+ */
+int (*picker(char ch))(va_list)
+{
+        op_p ops[] = {
+                {"c", _putchar_c},
+                {"s", _putchar_s},
+                {"d", _putchar_d},
+        };
+        int i = 0;
+
+        while (i < 1)
+        {
+                while (ops[i].op)
+                {
+                        if (ops[i].op[0] == ch)
+                                return (ops[i].f);
+                        i++;
+                }
+        }
+        return (ops[2].f);
+}
+
+
+/**
  * _putchar - writes a character
  * @c: char
  * Return: on success 1
@@ -57,5 +87,30 @@ int _putchar_s(va_list list)
 			s++;
 		}
 	}
+	return (counter);
+}
+
+int _putchar_d(va_list list)
+{
+        int d, aux = 1, counter = 1;
+
+        d = va_arg(list, int);
+	if (d)
+	{
+		if (d < 0)
+		{
+			_putchar('-');
+			d = d * -1;
+		}
+		for (aux = 1; aux <= d; aux *= 10)
+			counter++;
+		for (aux = aux / 10; aux > 1; aux /= 10)
+		{
+			_putchar(((d / aux) % 10) + 48);
+		}
+		_putchar((d % 10) + 48);
+	}
+	else
+		_putchar('0');
 	return (counter);
 }

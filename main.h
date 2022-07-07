@@ -21,5 +21,6 @@ int _putchar_s(va_list list);
 int _printf(const char *format, ...);
 int (*picker(char ch))(va_list list);
 int _putchar(char c);
+int _putchar_d(va_list list);
 
 #endif

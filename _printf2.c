@@ -1,8 +1,7 @@
 #include <stdarg.h>
 #include "main.h"
-
 /**
- * _printf_aux - prints the format
+ * _printf - prints the format
  * @format: is the format to print
  *
  * Return: return the number of print character
@@ -19,7 +18,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			if (format[n + 1] != 'c' && format[n + 1] != 's' && format[n + 1] != 'd')
+			if (format[n + 1] != 'c' && format[n + 1] != 's')
 			{
 				_putchar(format[n]);
 				counter++;
@@ -50,3 +49,30 @@ int _printf(const char *format, ...)
 	return (counter);
 }
 
+/**
+ * picker - picks function to do
+ * @ch: is th character
+ * Description: recieves a character from function printf and
+ * from there it decides what function to do
+ *
+ * Return: return the function
+ */
+int (*picker(char ch))(va_list)
+{
+	op_p ops[] = {
+		{"c", _putchar_c},
+		{"s", _putchar_s},
+	};
+	int i = 0;
+
+	while (i < 1)
+	{
+		while (ops[i].op)
+		{
+			if (ops[i].op[0] == ch)
+				return (ops[i].f);
+			i++;
+		}
+	}
+	return (ops[2].f);
+}

@@ -14,6 +14,8 @@ int main(void)
 	    printf("String:[%s]\n", "I am a string !");
 	len = _printf("Percent:[%%]\n");
 	    len2 = printf("Percent:[%%]\n");
+	    _printf("Negative:[%d]\n", -762534);
+	    printf("Negative:[%d]\n", -762534);
 	
 	return (0);
 }
