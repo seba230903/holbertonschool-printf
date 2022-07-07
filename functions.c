@@ -92,7 +92,7 @@ int _putchar_s(va_list list)
 
 int _putchar_d(va_list list)
 {
-        int d, aux = 1, counter = 1;
+        int d, aux = 1, counter = 0;
 
         d = va_arg(list, int);
 	if (d)
@@ -104,7 +104,7 @@ int _putchar_d(va_list list)
 			counter++;
 		}
 		for (aux = 1; aux <= d; aux *= 10)
-			counter++;
+			;
 		for (aux = aux / 10; aux > 1; aux /= 10)
 		{
 			_putchar(((d / aux) % 10) + 48);
@@ -113,6 +113,9 @@ int _putchar_d(va_list list)
 		counter++;
 	}
 	else
+	{
 		_putchar('0');
+		counter = 1;
+	}
 	return (counter);
 }
