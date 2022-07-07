@@ -13,21 +13,26 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			picker(format[n + 1])(list);
-			n += 2;
+			if (format[n + 1] == 'c')
+				picker(format[n + 1])(list);
+			else if (format[n + 1] == 's')
+				printf("%s", va_arg (list, char *));
+				/*picker(format[n + 1])(va_arg (list, char*));*/
+			else if (format [n + 1] == '%')
+				_putchar_c('%');
 		}
 		else
 		{
-			_putchar(format[n]);
-			n++;
+			_putchar_c(format[n]);
 		}
+		n++;
 	}
 	va_end(list);
 	return (0);
 }
 
 
-int (*picker(char ch))(va_list)
+int (*picker(char *ch))(va_list list)
 {
 	op_p ops[] = {
 		{"c", _putchar_c},
@@ -35,11 +40,10 @@ int (*picker(char ch))(va_list)
 	};
 	int i = 0;
 
-	while (ops[i].op)
+	while (i < 2)
 	{
-		if (ops[i].op[0] == ch)
+		if (*ops[i].op == ch)
 			return (ops[i].f);
 		i++;
 	}
-	return (0);
 }

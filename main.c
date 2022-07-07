@@ -1,11 +1,14 @@
 #include "main.h"
+#include <stdarg.h>
 
 int main(void)
 {
-	char a;
 
-	_putchar_c(37);
-	_putchar_c(10);
-	_putchar_s("hola");
+	printf("%c\n", 'h');
+	_printf("%c\n", 'h');
+	printf("Let's try to printf a simple sentence.\n");
+	_printf("Let's try to printf a simple sentence.\n");
+	printf("String:[%s]\n", "I am a string !");
+	_printf("String:[%s]\n", "I am a string !");
 	return (0);
 }
