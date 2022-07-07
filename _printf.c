@@ -26,8 +26,6 @@ int _printf(const char *format, ...)
 			else
 			{
 				counter += picker(format[n + 1])(list);
-				if (!(picker(format[n + 1])(list)))
-					_putchar(format[n + 1]);
 				/**
 				 * si encuentra un modulo le manda a picker el siguiente
 				 * caracter y picker elije que funcion usar
