@@ -21,9 +21,12 @@ int _printf(const char *format, ...)
 			if (format[n + 1] != 'c' && format[n + 1] != 's')
 			{
 				_putchar(format[n]);
+				counter++;
 				if (format[n + 1] != '%')
+				{
 					_putchar(format[n + 1]);
-				counter += 2;
+					counter++;
+				}
 			}
 			else
 			{
