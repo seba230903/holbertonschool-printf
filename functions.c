@@ -34,7 +34,7 @@ int _putchar_c(va_list list)
 int _putchar_s(va_list list)
 {
 	char *s;
-	int m = 0;
+	int counter = 0;
 
 	s = va_arg(list, char *);
 	if (!s)
@@ -53,9 +53,9 @@ int _putchar_s(va_list list)
 		while (*s)
 		{
 			_putchar(*s);
-			m++;
+			counter++;
 			s++;
 		}
 	}
-	return (m);
+	return (counter);
 }

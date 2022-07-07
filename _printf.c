@@ -11,8 +11,9 @@ int _printf(const char *format, ...)
 	int n = 0, counter = 0;
 	va_list list;
 
+	if (!format || !format[n + 1])
+		return (-1);
 	va_start(list, format);
-
 	while (format && format[n])
 	{
 		if (format[n] == '%')
@@ -25,6 +26,8 @@ int _printf(const char *format, ...)
 			else
 			{
 				counter += picker(format[n + 1])(list);
+				if (!(picker(format[n + 1])(list)))
+					_putchar(format[n + 1]);
 				/**
 				 * si encuentra un modulo le manda a picker el siguiente
 				 * caracter y picker elije que funcion usar
@@ -56,14 +59,18 @@ int (*picker(char ch))(va_list)
 	op_p ops[] = {
 		{"c", _putchar_c},
 		{"s", _putchar_s},
+		{NULL, NULL}
 	};
 	int i = 0;
 
-	while (ops[i].op)
+	while (i < 1)
 	{
-		if (ops[i].op[0] == ch)
-			return (ops[i].f);
-		i++;
+		while (ops[i].op)
+		{
+			if (ops[i].op[0] == ch)
+				return (ops[i].f);
+			i++;
+		}
 	}
-	return (0);
+	return (ops[2].f);
 }
