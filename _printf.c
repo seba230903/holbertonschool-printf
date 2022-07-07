@@ -18,10 +18,11 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			if (format[n + 1] == '%')
+			if (format[n + 1] != 'c' || format[n + 1] != 's')
 			{
-				_putchar('%');
-				counter++;
+				_putchar(format[n]);
+				_putchar(format[n + 1]);
+				counter += 2;
 			}
 			else
 			{

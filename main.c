@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 
 int main(void)
 {
@@ -8,8 +9,7 @@ int main(void)
 
 	len = _printf("Let's try to printf a simple sentence.\n");
  	   len2 = printf("Let's try to printf a simple sentence.\n");	
-	_printf("Character:[%c]\n", 'H');
-   	 printf("Character:[%c]\n", 'H');
+	_printf("%!\n");
    	 _printf("String:[%s]\n", "I am a string !");
 	    printf("String:[%s]\n", "I am a string !");
 	len = _printf("Percent:[%%]\n");
