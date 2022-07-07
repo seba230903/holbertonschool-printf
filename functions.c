@@ -108,6 +108,7 @@ int _putchar_d(va_list list)
 		for (aux = aux / 10; aux > 1; aux /= 10)
 		{
 			_putchar(((d / aux) % 10) + 48);
+			counter++;
 		}
 		_putchar((d % 10) + 48);
 		counter++;
