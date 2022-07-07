@@ -2,11 +2,9 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _putchar - writes a character
+ * @c: char
+ * Return: on success 1
  */
 int _putchar(char c)
 {
@@ -15,11 +13,9 @@ int _putchar(char c)
 
 
 /**
- * _putchar_c - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _putchar_c - writes a character
+ * @c: char
+ * Return: on success 1
  */
 int _putchar_c(va_list list)
 {
@@ -31,11 +27,9 @@ int _putchar_c(va_list list)
 
 
 /**
- * _putchar_s - writes the string s to stdout
- * @s: The string to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _putchar_s - writes a string
+ * @s: string
+ * Return: On success 1
  */
 int _putchar_s(va_list list)
 {
@@ -43,7 +37,7 @@ int _putchar_s(va_list list)
 	int n = 0;
 
 	s = va_arg(list, char *);
-	if (s == NULL)
+	if (!s)
 		s = "(null)";
 	while (s[n])
 	{
