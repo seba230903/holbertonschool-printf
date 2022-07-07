@@ -14,13 +14,13 @@ int _putchar(char c)
 
 /**
  * _putchar_c - writes a character
- * @c: char
+ * @list: is the list of the variadic function
  * Return: on success 1
  */
 int _putchar_c(va_list list)
 {
 	int c;
-	
+
 	c = va_arg(list, int);
 	return (write(1, &c, 1));
 }
@@ -28,7 +28,7 @@ int _putchar_c(va_list list)
 
 /**
  * _putchar_s - writes a string
- * @s: string
+ * @list: is the list of the variadic function
  * Return: On success 1
   */
 int _putchar_s(va_list list)
@@ -38,11 +38,24 @@ int _putchar_s(va_list list)
 
 	s = va_arg(list, char *);
 	if (!s)
-		s = "(null)";
-	while (s[m + 1])
 	{
-		_putchar(s[m]);
-		m++;
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		return (6);
+
+	}
+	else
+	{
+		while (*s)
+		{
+			_putchar(*s);
+			m++;
+			s++;
+		}
 	}
 	return (m);
 }

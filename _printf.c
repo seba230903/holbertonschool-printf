@@ -1,8 +1,10 @@
 #include <stdarg.h>
 #include "main.h"
 /**
- * printf - prints the format
+ * _printf - prints the format
  * @format: is the format to print
+ *
+ * Return: return the number of print character
  */
 int _printf(const char *format, ...)
 {
@@ -15,12 +17,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			picker(format[n + 1])(list); 
-			/*si encuentra un modulo le manda a picker el siguiente 
-			 * caracter y picker elije que funcion usar*/
-			counter += picker(format[n + 1])(list);
-			n += 2;/*se saltea el modulo y 
-				el siguiente caracter y sigue imprimiendo*/
+			if (format[n + 1] == '%')
+			{
+				_putchar('%');
+				counter++;
+			}
+			else
+			{
+				counter += picker(format[n + 1])(list);
+				/**
+				 * si encuentra un modulo le manda a picker el siguiente
+				 * caracter y picker elije que funcion usar
+				 */
+			}
+			n += 2; /*se saltea el modulo y el siguiente caracter y sigue imprimiendo*/
 		}
 		else
 		{
@@ -35,15 +45,17 @@ int _printf(const char *format, ...)
 
 /**
  * picker - picks function to do
- * Description: recieves a character from function printf and 
+ * @ch: is th character
+ * Description: recieves a character from function printf and
  * from there it decides what function to do
+ *
+ * Return: return the function
  */
 int (*picker(char ch))(va_list)
 {
 	op_p ops[] = {
 		{"c", _putchar_c},
 		{"s", _putchar_s},
-		{"%", _putchar_c}
 	};
 	int i = 0;
 
