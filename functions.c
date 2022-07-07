@@ -91,9 +91,16 @@ int _putchar_s(va_list list)
 	return (counter);
 }
 
+/**
+ * _putchar_d - writes a integer
+ * @list: is the list of the variadic function
+ *
+ * Return: On success 1
+ */
 int _putchar_d(va_list list)
 {
-        int d, aux = 1, counter = 0;
+        long int d, aux = 0;
+	int counter = 0;
 
         d = va_arg(list, int);
 	if (d)
