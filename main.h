@@ -22,5 +22,7 @@ int _printf(const char *format, ...);
 int (*picker(char ch))(va_list list);
 int _putchar(char c);
 int _putchar_d(va_list list);
+int i_to_b(unsigned int i);
+int _putchar_b(va_list list);
 
 #endif
