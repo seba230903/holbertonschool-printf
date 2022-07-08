@@ -231,7 +231,7 @@ int _putchar_S(va_list list)
 			}
 			else
 			{
-				 _putchar(*s);
+				 _putchar(*s + '0');
                         	counter++;
 			}
                         s++;
