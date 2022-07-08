@@ -9,7 +9,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int n = 0, counter = 0;
+	int n = 0, i = 0, counter = 0, find = 0;
+	char chars[] = "csdibuoxX";
 	va_list list;
 
 	if (!format || !format[n + 1])
@@ -19,9 +20,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] == '%')
 		{
-			if (format[n + 1] != 'c' && format[n + 1] != 's'
-			&& format[n + 1] != 'd' && format[n + 1] != 'i'
-			&& format[n + 1] != 'b')
+			find = 0;
+			for (i = 0; i <= 8; i++)
+			{
+				if (format[n + 1] == chars[i])
+				{
+					find = 1;
+					break;
+				}
+			}
+			if (find == 0)
 			{
 				_putchar(format[n]);
 				counter++;
@@ -31,7 +39,7 @@ int _printf(const char *format, ...)
 					counter++;
 				}
 			}
-			else
+			else if (find == 1)
 			{
 				counter += picker(format[n + 1])(list);
 				/**
