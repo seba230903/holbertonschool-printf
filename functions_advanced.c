@@ -12,7 +12,7 @@ int i_to_b(unsigned int i)
 	unsigned int aux = i;
 	int counter = 0;
 
-	if (aux > 2)
+	if (aux >= 2)
 	{
 		counter = i_to_b(aux / 2);
 	}
