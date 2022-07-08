@@ -14,8 +14,7 @@ int i_to_b(unsigned int i)
 
 	if (aux > 2)
 	{
-		counter++;
-		i_to_b(aux / 2);
+		counter = i_to_b(aux / 2);
 	}
 	counter++;
 	if (!(aux % 2))
