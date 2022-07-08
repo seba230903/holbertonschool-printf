@@ -17,7 +17,7 @@ int i_to_b(unsigned int i)
 		i_to_b(aux / 2);
 		counter++;
 	}
-
+	counter++;
 	if (!(aux % 2))
 	{
 		_putchar('0');
@@ -26,7 +26,6 @@ int i_to_b(unsigned int i)
 	{
 		_putchar ('1');
 	}
-	counter++;
 	return (counter);
 }
 
