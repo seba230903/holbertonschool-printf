@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int n = 0, i = 0, counter = 0, find = 0;
-	char chars[] = "csdibuoxX";
+	char chars[] = "csdibuoxXS";
 	va_list list;
 
 	if (!format || !format[n + 1])
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		if (format[n] == '%')
 		{
 			find = 0;
-			for (i = 0; i <= 8; i++)
+			for (i = 0; i <= 9; i++)
 			{
 				if (format[n + 1] == chars[i])
 				{
