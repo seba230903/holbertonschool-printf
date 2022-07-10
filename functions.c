@@ -15,7 +15,13 @@ int (*picker(char ch))(va_list)
                 {"c", _putchar_c},
                 {"s", _putchar_s},
                 {"d", _putchar_d},
-		{"i", _putchar_d}
+		{"i", _putchar_d},
+		{"b", _putchar_b},
+		{"u", _putchar_u},
+		{"o", _putchar_o},
+		{"x", _putchar_x},
+		{"X", _putchar_X},
+		{"S", _putchar_S}
         };
         int i = 0;
 
