@@ -1,0 +1,65 @@
+.TH man_3_printf(3) "11 July 2022" "simple printf man page"
+
+.Sh NAME
+.B _printf
+
+- We are creating our own simple printf
+
+.SH SYNOPSIS
+.B _printf
+
+.RB int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+.B _printf
+.PP
+The functions _printf produce output according to a format as described below. It writes output to stdout. More information on the tasks performed is explained below:
+The functions writes the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of stdarg(3)) are converted for output.
+
+.RS
+.nf
+.RE
+
+
+.SH CONVERSION SPECIFIERS
+.TP
+.B c - 
+.PP
+The argument must be a char. For example call the function: _printf("%c", 'H') the outpub would be "H".
+
+.TP
+.B s - 
+.PP
+The argument must be a string. For example call the function: _printf("%s", "Hello") the output would be "Hello".
+
+.TP
+.B d, i - 
+.PP
+For printing a decimal or an integer. _printf("%d", 3), would print "3"
+
+
+.SH FORMAT OF THE FORMAT STRING
+.IP
+.PP
+The format string is a character string, beginning and ending in its initial shift state, if any.  The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments.  Each conversion specification is introduced by the character %, and ends with a conversion specifier.
+The overall syntax of a conversion specification is:
+
+%[$][flags][width][.precision][length modifier]conversion
+
+
+.SH EXIT STATUS
+.TP
+.B
+Success - Upon successful return, this functions returns the number of characters printed (excluding the null byte used to end output to strings).
+
+.TP
+.B
+Error - If an output error is encountered, a negative value is returned.
+
+
+.SH CREDITS
+.PP
+Copyright 2022 @Gaston larroque @Sebastian Lopez Dominguez. All rights reserved
+.PP
+This man page is created as part of a school project for Holberton School.
+
