@@ -8,7 +8,7 @@
 .SH SYNOPSIS
 .B _printf
 
-.RB int _printf(const char *format, ...);
+.RB PROTOTYPE: int _printf(const char *format, ...);
 
 .SH DESCRIPTION
 .B _printf
@@ -46,6 +46,9 @@ The overall syntax of a conversion specification is:
 
 %[$][flags][width][.precision][length modifier]conversion
 
+.SH EXAMPLES
+- _printf("Hello %s\n", "World"); Output: Hello World
+- _prinf("2 + 2 = %d", 4); Output: 2 + 2 = 4
 
 .SH EXIT STATUS
 .TP
