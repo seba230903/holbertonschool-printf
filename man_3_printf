@@ -48,6 +48,7 @@ The overall syntax of a conversion specification is:
 
 .SH EXAMPLES
 - _printf("Hello %s\n", "World"); Output: Hello World
+.PP
 - _prinf("2 + 2 = %d", 4); Output: 2 + 2 = 4
 
 .SH EXIT STATUS
