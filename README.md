@@ -2,6 +2,20 @@
 
 We are Software Development students at  [Holberton School](https://www.holbertonschool.com/) and we have to create our own printf like function.
 
+## Description
+
+
+## Examples
+
+```
+_printf("Hello %s\n", "World");
+```
+Output: Hello World
+
+```
+_prinf("2 + 2 = %d", 4);
+```
+Output: 2 + 2 = 4
 
 ## General Requirements
 - Allowed editors: vi, vim, emacs
@@ -36,6 +50,9 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 - 0 - Write a function that produces output according to a format. Handle the following conversion specifiers: c, s, %
 - 1 - Handle the following conversion specifiers: d, i.
 - 2 - Create a man page for your function.
+- 3 - Handle the following custom conversion specifiers: b, the unsigned int argument is converted to binary
+- 4 - Handle the following conversion specifiers: u, o, x, X
+- 7 - Handle the following custom conversion specifier: S
 
 #### Authors: 
 @ [Gaston Larroque](https://github.com/gasstin) &  [Sebastian Lopez Dominguez](https://github.com/seba230903)
