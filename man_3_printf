@@ -9,6 +9,7 @@
 .B _printf
 
 .RB PROTOTYPE: int _printf(const char *format, ...);
+.RB HEADER: "main.h"
 
 .SH DESCRIPTION
 .B _printf
@@ -22,20 +23,41 @@ The functions writes the output under the control of a format string that specif
 
 
 .SH CONVERSION SPECIFIERS
-.TP
 .B c - 
 .PP
 The argument must be a char. For example call the function: _printf("%c", 'H') the outpub would be "H".
 
-.TP
 .B s - 
 .PP
 The argument must be a string. For example call the function: _printf("%s", "Hello") the output would be "Hello".
 
-.TP
 .B d, i - 
 .PP
-For printing a decimal or an integer. _printf("%d", 3), would print "3"
+For printing an integer. _printf("%d", 3), would print "3"
+
+.B b -
+.PP
+Prints a variable of type int in base 2
+
+.B u -
+.PP
+Prints a variable of type unsigned int
+
+.B o -
+.PP
+Prints a variable of type int in base 8
+
+.B x -
+.PP
+Prints a variabe of type int in base 16 with lowercase letters
+
+.B X -
+.PP
+Does the same as "%x" but uppercase
+
+.B S -
+.PP
+Prints an array of chars but replaces non printable characters to their value in hexadecimal
 
 
 .SH FORMAT OF THE FORMAT STRING
@@ -54,10 +76,12 @@ The overall syntax of a conversion specification is:
 .SH EXIT STATUS
 .TP
 .B
+.PP
 Success - Upon successful return, this functions returns the number of characters printed (excluding the null byte used to end output to strings).
 
 .TP
 .B
+.PP
 Error - If an output error is encountered, a negative value is returned.
 
 
