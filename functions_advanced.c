@@ -47,16 +47,27 @@ int _putchar_u(va_list list)
 }
 
 /**
- * _putchar_x - writes a hexadecimal
- * @list: is the list of the variadic function
- * Return: On success 1
-  */
-int _putchar_x(va_list list)
-{
-	unsigned int d;
+ * i_to_X - Convert a int to a lower hexadecimal
+ * @i: is the integer
+ *
+ * Return:the character prints
+ */
 
-	d = va_arg(list, int);
-	return (i_to_x(d));
+int i_to_X(unsigned int i)
+{
+        unsigned int aux = i;
+        int counter = 0;
+
+        if (aux >= 16)
+                counter = i_to_X(aux / 16);
+
+        if ((aux % 16) > 9)
+                _putchar((aux % 16) + 55);
+        else
+                _putchar((aux % 16) + 48);
+        counter++;
+
+        return (counter);
 }
 
 /**
