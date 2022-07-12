@@ -88,7 +88,7 @@ int i_to_X(unsigned int i)
 }
 
 /**
- * i_to_X - Convert a int to a lower hexadecimal
+ * i_to_x - Convert a int to a lower hexadecimal
  * @i: is the integer
  *
  * Return:the character prints
@@ -113,7 +113,7 @@ int i_to_x(unsigned int i)
 
 /**
  * i_to_u - Print the integer
- * @i: is the integer
+ * @d: is the integer
  *
  * Return:the character prints
  */
