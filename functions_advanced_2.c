@@ -92,9 +92,9 @@ int i_to_x(unsigned int i)
   */
 int _putchar_x(va_list list)
 {
-        unsigned int d;
+	unsigned int d;
 
-        d = va_arg(list, int);
-        return (i_to_x(d));
+	d = va_arg(list, int);
+	return (i_to_x(d));
 }
 

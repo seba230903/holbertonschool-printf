@@ -55,19 +55,18 @@ int _putchar_u(va_list list)
 
 int i_to_X(unsigned int i)
 {
-        unsigned int aux = i;
-        int counter = 0;
+	unsigned int aux = i;
+	int counter = 0;
 
-        if (aux >= 16)
-                counter = i_to_X(aux / 16);
+	if (aux >= 16)
+		counter = i_to_X(aux / 16);
 
-        if ((aux % 16) > 9)
-                _putchar((aux % 16) + 55);
-        else
-                _putchar((aux % 16) + 48);
-        counter++;
-
-        return (counter);
+	if ((aux % 16) > 9)
+		_putchar((aux % 16) + 55);
+	else
+		_putchar((aux % 16) + 48);
+	counter++;
+	return (counter);
 }
 
 /**
