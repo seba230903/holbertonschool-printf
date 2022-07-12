@@ -11,10 +11,10 @@
  */
 int (*picker(char ch))(va_list)
 {
-        op_p ops[] = {
-                {"c", _putchar_c},
-                {"s", _putchar_s},
-                {"d", _putchar_d},
+	op_p ops[] = {
+		{"c", _putchar_c},
+		{"s", _putchar_s},
+		{"d", _putchar_d},
 		{"i", _putchar_d},
 		{"b", _putchar_b},
 		{"u", _putchar_u},
@@ -22,19 +22,19 @@ int (*picker(char ch))(va_list)
 		{"x", _putchar_x},
 		{"X", _putchar_X},
 		{"S", _putchar_S}
-        };
-        int i = 0;
+	};
+	int i = 0;
 
-        while (i < 1)
-        {
-                while (ops[i].op)
-                {
-                        if (ops[i].op[0] == ch)
-                                return (ops[i].f);
-                        i++;
-                }
-        }
-        return (ops[2].f);
+	while (i < 1)
+	{
+		while (ops[i].op)
+		{
+			if (ops[i].op[0] == ch)
+				return (ops[i].f);
+			i++;
+		}
+	}
+	return (ops[2].f);
 }
 
 
@@ -105,10 +105,10 @@ int _putchar_s(va_list list)
  */
 int _putchar_d(va_list list)
 {
-        long int d, aux = 0;
+	long int d, aux = 0;
 	int counter = 0;
 
-        d = va_arg(list, int);
+	d = va_arg(list, int);
 	if (d)
 	{
 		if (d < 0)
