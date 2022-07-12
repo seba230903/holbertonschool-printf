@@ -3,7 +3,20 @@
 We are Software Development students at  [Holberton School](https://www.holbertonschool.com/) and we have to create our own printf like function.
 
 ## Description
-Printf is a function used to print an array of chars and choose a format for said string at the same time. In this project, the function recieve an array of chars with all the characters to prinst along whith its format. It is also able to recieve all the parameters for the format, like chars, string integers, etc.
+Printf is a function used to print an array of chars and choose a format for said string at the same time. In this aproach, the function recieves an array of chars with all the characters to print along whith its format. It is also able to recieve all the parameters for the format, like chars, strings, integers, etc.
+
+##Functions
+- %c Prints a variable containing an ASCII value.
+- %s Prints an array of chars.
+- %d Prints a variable of type int in base 10.
+- %i Does the same as "%d".
+- %b Prints a variable of type int in base 2.
+- %u Prints a variable of type unsigned int.
+- %o Prints a variable of type int in base 8.
+- %x Prints a variabe of type int in base 16 with lowercase letters.
+- %X Does the same as "%x" but uppercase.
+- %S Prints an array of chars but replaces non printable characters with their value in hexadecimal.
+
 
 ## Examples
 
