@@ -3,7 +3,7 @@
 We are Software Development students at  [Holberton School](https://www.holbertonschool.com/) and we have to create our own printf like function.
 
 ## Description
-
+Printf is a function used to print an array of chars and choose a format for said string at the same time. In this project, the function recieve an array of chars with all the characters to prinst along whith its format. It is also able to recieve all the parameters for the format, like chars, string integers, etc.
 
 ## Examples
 
