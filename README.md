@@ -73,3 +73,20 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 
 :)
+
+
+
+```mermaid
+graph TD;
+  Start0(Start)-->If0{format?}
+  If0-->|No|Return0(Return -1)
+  If0-->|Yes|While0{Go through format}
+  While0-->|No|Return1(Return counter)
+  While0-->|Yes|If1{The char is a %}
+  If1-->|No|Put0[Put the char]-->While0
+  If1-->|Yes|For0[Checks for function]
+  For0-->If2{Is the following char<br>a valid function}
+  If2-->|Yes|Call0[Call picker function]-->While0
+  If2-->|No|Put1[Put the char]-->While0
+  While0-->Return2(Return counter)
+ ```
